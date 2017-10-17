@@ -1,0 +1,102 @@
+  #sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 300px;
+    background: #1D2127;
+    transition-duration: .3s;
+    z-index: 5;
+  }
+  #sidebar,
+  #sidebar a {
+    color: #ABB4BE;
+  }
+  #main {
+    position: fixed;
+    top: 0;
+    left: 300px;
+    bottom: 0;
+    right: 0;
+    z-index: 4;
+    transition-duration: .3s;
+    /* padding-left: 4px; */
+    box-shadow: inset 4px 0 0 #EFEFEF, inset 5px 0 0 #e2e2e2;
+  }
+  #main .overlay {
+    position: absolute;
+    top: 0;
+    left: -10px;
+    right: 0;
+    bottom: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 5;
+    opacity: 0;
+    transition-duration: 0s;
+    transition-property: opacity;
+  }
+  .show-main-overlay #main .overlay {
+    opacity: 1;
+    bottom: 0;
+    transition-duration: .5s;
+  }
+  #main .header {
+    /* padding: 50px 60px; */
+    padding: 10px;
+    border-bottom: 1px solid #EFEFEF;
+    overflow: hidden;
+  }
+  #main .header .page-title {
+    display: block;
+    margin: 10px;
+  }
+  #main .header .page-title .sidebar-toggle-btn {
+    width: 0;
+    margin-top: 1px;
+    padding: 0 0 0 0;
+    float: left;
+    position: relative;
+    display: block;
+    cursor: pointer;
+    transition-duration: .3s;
+    transition-delay: .5s;
+    opacity: 0;
+    margin-right: 0;
+    opacity: 1;
+    width: 20px;
+  }
+  .show-sidebar #main .header .page-title .sidebar-toggle-btn {
+    transition-delay: 0s;
+  }
+  #main .header .page-title .sidebar-toggle-btn .line {
+    height: 3px;
+    display: block;
+    background: #888;
+    margin-bottom: 4px;
+    transition-duration: .5s;
+    transition-delay: .5s;
+  }
+  #main #main-nano-wrapper {
+    position: absolute;
+    top: 80px;
+    bottom: 0;
+    height: auto;
+  }
+  #sidebar {
+    transform: translateX(-100%);
+  }
+  #main {
+    left: 0;
+    box-shadow: none;
+  }
+  #main .header .page-title .sidebar-toggle-btn {
+    margin-right: 20px;
+    opacity: 1;
+    width: 20px;
+  }
+  .show-sidebar #sidebar {
+    transform: none;
+  }
+  .show-sidebar #main {
+    transform: translateX(300px);
+  }
